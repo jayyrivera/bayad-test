@@ -14,7 +14,7 @@ class ApiNotifier extends StateNotifier<ApiState> {
     state = state.copyWith(isLoading: true);
     try {
       var response = await _dioUtil.call(
-          '/api/5289c453cc1945c7a08590abc964cd4f/movies',
+          '/api/dec6e512eea44ce984875c95f9a3adb6/movies',
           method: MethodRequest.get,
           request: {});
       var list = (response?.data as List)
@@ -32,7 +32,7 @@ class ApiNotifier extends StateNotifier<ApiState> {
     try {
       // Attempt to update the movie on the server
       var response = await _dioUtil.call(
-          '/api/5289c453cc1945c7a08590abc964cd4f/movies/${model.sId}',
+          '/api/dec6e512eea44ce984875c95f9a3adb6/movies/${model.sId}',
           method: MethodRequest.put,
           request: {
             'movie_title': model.movieTitle,
@@ -75,7 +75,7 @@ class ApiNotifier extends StateNotifier<ApiState> {
     state = state.copyWith(isLoading: true);
     try {
       var response = await _dioUtil.call(
-          '/api/5289c453cc1945c7a08590abc964cd4f/movies/$id',
+          '/api/dec6e512eea44ce984875c95f9a3adb6/movies/$id',
           method: MethodRequest.delete,
           request: {});
       if (response != null && response.statusCode == 200) {
